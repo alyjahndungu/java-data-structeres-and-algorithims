@@ -11,6 +11,7 @@ public class ReverseString {
         String str = br.readLine();
 
         StringBuilder sb = usingStringBuilder(str);
+
         char[] arr = usingCharArray(str);
 
         byte[] result = byConvertingStringToBytes(str);
@@ -51,6 +52,16 @@ public class ReverseString {
         return sb;
     }
 
+    private static String usingCharStringBuilder(String str) {
+        if (str == null)  throw new IllegalArgumentException("Null is not valid input");
+        StringBuilder sb = new StringBuilder();
+        char[] chars = str.toCharArray();
+
+        for (int i = chars.length - 1; i >= 0; i--)
+            sb.append(chars[i]);
+
+        return sb.toString();
+    }
     /**
      * Solution 3: Converting strings to bytes and using the getBytes() function
      *
